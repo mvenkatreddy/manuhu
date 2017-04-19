@@ -1,0 +1,14 @@
+{% extends "registration/base.html" %}
+{% block content %}
+<form action="{% url 'accounts_signin' %}" method="post" role="form">
+{% csrf_token %}
+    <h3> Professional Services Login </h3>
+    <div class="form-group">
+        <label for="user">User</label>
+        <input type="text" class="form-control" id="user" name="username" placeholder="User" style="width: 250px;" />
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Password" style="width: 250px;" />
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button> </a>
+</form>
+{% endblock %}

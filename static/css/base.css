@@ -1,0 +1,127 @@
+#id_need_tutor_often {
+    font-weight:bold;
+}
+#id_timings_to_teach {
+    list-style-type: none;
+}
+#id_free_days_train_up {
+    list-style-type: none;
+
+}
+#id_subjects_of_students {
+    list-style-type: none;
+
+}
+.sign-up {
+	margin: 40px auto;
+	padding: 10px;
+	max-width: 600px;
+	text-align: center;
+	height: 500px;
+    background:  none repeat scroll 0 0 #e9f0f4 !important;
+}
+
+#register-id {
+    font: 40px/1 Helvetica, sans-serif;
+    text-align: center;
+}
+
+/*#user-text-id {
+	padding-top: 80px;
+	padding-bottom: 10px;
+	padding-right: 30px;
+}*/
+
+#button-customer-id {
+	padding-right: 20px;
+	margin-left: -30px
+}
+
+#button-seller-id {
+	padding-right: 20px;
+	margin-left: 10px
+}
+
+.content-box {
+    background: none repeat scroll 0 0 #fff;
+    border-radius: 9px;
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.13);
+   /* overflow: hidden;*/
+    padding: 15px;
+}
+
+#register-form #user-id {
+    margin-left: -200px; 
+    margin-top: 10px; 
+    border-top-width: 100px; 
+    padding-top: 20px;
+}
+
+#register-form #username {
+	width: 150px; 
+    padding-left: 12px; 
+    border-left-width: 1px; 
+    margin-left: 85px; 
+    margin-top: -40px;
+}
+
+#register-form #address-id {
+    margin-left: -220px; 
+    margin-top: 10px; 
+    border-top-width: 100px; 
+    padding-top: 20px;
+}
+
+#register-form #address {
+	width: 150px; 
+    padding-left: 12px; 
+    border-left-width: 1px; 
+    margin-left: 85px; 
+    margin-top: -40px;
+}
+
+#register-form #cellnumber-id {
+    margin-left: -200px; 
+    margin-top: 10px; 
+    border-top-width: 100px; 
+    padding-top: 20px;
+}
+
+#register-form #cellnumber {
+	width: 150px; 
+    padding-left: 12px; 
+    border-left-width: 1px; 
+    margin-left: 85px; 
+    margin-top: -40px;
+}
+
+#register-form #email-id {
+    margin-left: -230px; 
+    margin-top: 10px; 
+    border-top-width: 100px; 
+    padding-top: 20px;
+}
+
+#register-form #email {
+	width: 150px; 
+    padding-left: 12px; 
+    border-left-width: 1px; 
+    margin-left: 85px; 
+    margin-top: -40px;
+    margin-bottom: 20px;
+}
+
+#register .text-center {
+    padding-left: 0px; 
+    width: 130px; 
+    height: 20px; 
+    margin-top: -10px; 
+    margin-bottom: 10px
+}
+
+#register #customer {
+    border-left-width: 0px; 
+    padding-left: 0px; 
+    margin-left: -30px; 
+    margin-bottom: 5px;
+}

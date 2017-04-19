@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+	<title>{% block title %} Services Market Place {% endblock %}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript" src="{{ STATIC_URL }}jquery/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}jquery/jquery.validate.js"></script> 
+	<script type="text/javascript" src="{{ STATIC_URL }}eldarion-ajax/eldarion-ajax.min.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}bootstrap/js/bootstrap.js"></script>
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/base.css">
+</head>
+<body>
+<nav class="navbar navbar-inverse" role="navigation">
+	<div class="container-fluid">
+		{% if user.is_authenticated %}
+			<div class="navbar-header">
+  		        <a class="navbar-brand" href="/">Python_Django_Front Page</a>
+		    </div>
+			<ul class="nav navbar-nav navbar-right">
+                <li><font color="white">Welcome {{ user.username }}</font></li>
+				<li class="dropdown">
+			        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account <span class="caret"></span></a>
+		            <ul class="dropdown-menu" role="menu">
+		                <li>
+		                    <li><a href="{% url 'accounts_logout' %}">Logout</a></li>
+						  </form>
+			            </li>
+		            </ul>
+		        </li>
+	        </ul>
+
+	    {% else %}
+			<div class="navbar-header">
+		        <a class="navbar-brand" href="/">Django_Page</a>
+		    </div>
+            <ul class="nav navbar-nav navbar-right">
+	            <li><a href="/" role="button" class="home" class="btn-lg btn-default">Home</a></li>
+				<li><a href="#" role="button" class="login" class="btn btn-lg btn-default" title="Login" data-toggle="popover" data-placement="bottom">Login</a></li>
+			</ul>
+		{% endif %}       
+				        
+        <div id="login" class="dropdown-menu" style="padding: 10px; background: #ddd">
+	        <form action="{% url 'accounts_signin' %}" method="post" role="form">{% csrf_token %}
+	            <div class="form-group">
+	                <label for="user">User Mail</label>
+	                <input type="text" class="form-control" id="user" name="username" placeholder="User Mail" />
+	                <label for="password">Password</label>
+	                <input type="password" class="form-control" id="password" name="password" placeholder="Password" />
+	                <button type="submit" class="btn btn-primary">Sign in</button></br>
+			<form action="{% url 'user_registration' %}" method="post" role="form">{% csrf_token %}<a> Registration</a></form>
+	            </div>
+        	</form>
+        </div>
+	</div> <!-- container - fluid close -->
+</nav>
+
+{% block messages %}
+    {% if messages %}
+        <div class="container">
+        	{% for message in messages %}
+	        	<div class="message alert alert-{% if message.tags %}{{ message.tags }}{% endif %}">
+		        	<button type="button" class="close" data-dismiss="alert">x</button>
+		        	{{ message }}
+		        	</div>
+        	{% endfor %}
+        </div>
+    {% endif %}
+{% endblock messages %}
+<div class="container">
+    
+	{% block content %} {% endblock %}
+</div>
+    <!-- <div class="panel-default">
+	    <div class="panel-footer">
+		    {% block footer %}
+				&copy; copyrights by Anath 2014
+			{% endblock %}
+		</div>
+	</div> -->
+</body>
+<script>
+	$(document).ready(function(){
+		$('a.login').popover({ 
+		    html : true,
+		    content: function() {
+		      return $("#login").html();
+		    },
+		     template: '<div class="popover" role="tooltip" style="width: 500px;"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"><div class="data-content"></div></div></div>'
+		});
+	});
+	$(document).ready(function(){
+		$('a.register').click(function(){
+	    if ($("a.login").next('div.popover:visible').length == 1) {
+			$("a.login").popover("hide");
+		} 
+		});
+	$('a.login').click(function(){
+	    if ($("a.register").next('div.popover:visible').length == 1) {
+			$("a.register").popover("hide");
+		} 
+		});
+
+	});
+
+	$(document).ready(function(){
+
+		$('a.register').popover({
+	        html: true,
+	        content: function(){
+	        	return $("#register").html();
+	        },
+	        template: '<div class="popover" role="tooltip" style="width: 500px;"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"><div class="data-content"></div></div></div>'
+		});
+	});
+</script>
+
+</html>
